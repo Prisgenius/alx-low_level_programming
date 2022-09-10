@@ -1,46 +1,33 @@
 #include <stdio.h>
 
 /**
- *   * main - Prints 3 combination of numbers
- *     *
- *       * Return: Always (Success)
- *         */
+ *main -> assign a random number to the variable n each time it is executed
+ *and print the last digit of the number stored in the variable n
+ *Return: Always 0 (Success)
+ */
 int main(void)
 {
-		int c, i, k, j;
+int i, j;
 
-			for (c = 48; c <= 57; c++)
-					{
-								for (i = 48; i <= 57; i++)
-											{
-															for (k = 48; k <= 57; k++)
-																			{
-																								for (j = 48; j <= 57; j++)
-																													{
-																																			if (((k + j) > (c + i) &&  k >= c) || c < k)
-																																									{
-																																																putchar(c);
-																																																						putchar(i);
-																																																												putchar(' ');
-																																																																		putchar(k);
-																																																																								putchar(j);
-
-																																																																													if (c + i + k + j == 227 && c == 57)
-																																																																																			{
-																																																																																									break;
-																																																																																														}
-																																																																																		else
-																																																																																								{
-																																																																																														putchar(',');
-																																																																																																			putchar(' ');
-																																																																																																								}
-																																																																																							}
-																																							}
-																											}
-																	}
-									}
-
-				putchar('\n');
-
-					return (0);
+for (i = 0; i < 100; i++)
+{
+for (j = 0; j < 100; j++)
+{
+if (i < j)
+{
+putchar((i / 10) + 48);
+putchar((i % 10) + 48);
+putchar(' ');
+putchar((j / 10) + 48);
+putchar((j % 10) + 48);
+if (i != 98 || j != 99)
+{
+putchar(',');
+putchar(' ');
+}
+}
+}
+}
+putchar('\n');
+return (0);
 }
